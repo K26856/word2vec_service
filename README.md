@@ -1,4 +1,4 @@
-# installing
+# installation
 ## install openssl 1.1.1
 1. install
 ```bash
@@ -50,40 +50,22 @@ pip3.7 install gensim
 
 
 
-# data
+# premise data
 ## wiki data
 1. get and parse wiki data
-```
-wget https://github.com/attardi/wikiextractor/archive/master.zip
-unzip master.zip
-cd ./wikiextractor-master
-
-wget https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-pages-articles.xml.bz2
-python3 WikiExtractor.py jawiki-latest-pages-articles.xml.bz2
-find text/ | grep wiki | awk '{system("cat "$0" >> wiki.txt")}'
-egrep -v "<doc" wiki.txt | egrep -v "</doc" > parsed_wiki.txt
+```sh
+./get_wikidata.sh
 ```
 2. wakati
-```sh
+```
 mecab -Owakati parsed_wiki.txt -o wakati_wiki.txt -b 50000
 ```
-
 3. monitor process
 ```bash
-while true
-do
-    wakati=`wc -l wakati_wiki.txt | awk '{print $1}'`
-    base=`wc -l parsed_wiki.txt | awk '{print $1}'`
-    percent=$((wakati*100/base))
-    now_time=`date +%T`
-    clear
-    echo "${now_time}    ${percent}% (${wakati} / ${base})"
-    sleep 30
-done
+./monitor.sh 10
 ```
-
 4. make model word2vec
 ```
+python3.7 make_model.py
 ```
-
 
