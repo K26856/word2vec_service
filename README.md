@@ -18,7 +18,7 @@ ldconfig
 ```
 3. add bin path
 ```bash
-ln -s openssl /usr/local/openssl-1.1.1/bin/openssl
+ln -s /usr/local/bin/openssl /usr/local/openssl-1.1.1/bin/openssl
 ```
 
 
@@ -33,7 +33,7 @@ apt-get install build-essential tk-dev libncurses5-dev libncursesw5-dev libreadl
 ```bash
 wget https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tgz
 tar xvzf Python-3.7.7.tgz
-cd Python-3.7.7.tgz
+cd Python-3.7.7
 ./configure --with-openssl=/usr/local/openssl-1.1.1
 make
 make altinstall
