@@ -6,7 +6,6 @@ then
     exit -1
 fi
 
-scp ./jawiki.model \
-    ./jawiki.model.trainables.syn1neg.npy \
-    ./jawaiki.model.wv.vectors.npy \
+scp ./jawiki_wv.model \
+    ./jawiki_wv.model.vectors.npy \
     pi@${1}:/opt/word2vec_service/

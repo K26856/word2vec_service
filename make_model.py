@@ -6,3 +6,5 @@ sentences = word2vec.Text8Corpus('./wakati_wiki.txt')
 
 model = word2vec.Word2Vec(sentences, size=200, min_count=20, window=15)
 model.save("./jawiki.model")
+model.wv.save("./jawiki_wv.model")
+

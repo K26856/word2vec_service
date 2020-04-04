@@ -8,3 +8,5 @@ wakati_wiki.txt
 jawiki.model
 jawiki.model.trainables.syn1neg.npy
 jawiki.model.wv.vectors.npy
+jawiki_wv.model
+jawiki_wv.model.vectors.npy
