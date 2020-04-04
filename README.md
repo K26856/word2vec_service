@@ -69,3 +69,10 @@ mecab -Owakati parsed_wiki.txt -o wakati_wiki.txt -b 50000
 python3.7 make_model.py
 ```
 
+
+# Usage memo
+## load model
+```python
+from gensim.models import word2vec
+model = word2vec.Word2VecKeyedVectors.load("jawiki_wv.model") 
+```
