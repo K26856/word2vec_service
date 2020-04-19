@@ -1,11 +1,11 @@
 #!/bin/bash
 
-if [ $# -ne 1 ]
+if [ $# -ne 3 ]
 then
-    echo "usage ./send_app.sh {ipaddress}"
+    echo "usage ./send_app.sh {user} {ipaddress} {dir}"
     exit -1
 fi
 
 scp ./jawiki_wv.model \
     ./jawiki_wv.model.vectors.npy \
-    pi@${1}:/opt/word2vec_service/
+    ${1}@${2}:${3}
